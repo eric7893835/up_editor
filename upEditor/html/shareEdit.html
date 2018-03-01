@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>分享編輯</title>
+		<link rel="stylesheet" href="../lib/jquery.minicolors.css">
+		<link rel="stylesheet" href="../css/shareEdit.css" />
+		<link rel="stylesheet" href="../common/commonUI.css">
+	</head>
+
+	<body>
+		<div class="container">
+			
+			<div id="titleBar">分享內容編輯
+				<a id="close-popup" class="close-popup" href="#">X</a>
+				<a id="confirm-popup" class="confirm-popup" href="#">√</a>
+			</div>
+			
+			<!--编辑区域-->
+			<div id="shareWrap">
+				<div class="edit-item">
+					<div class="labal-area">
+						分享图片：
+					</div>
+					<div class="content-area">
+						<a id="shareImg" data-name="src" href="#" data-id="shareImg">点击选择图片</a>
+					</div>
+				</div>
+				<div class="edit-item">
+					<div class="labal-area">
+						分享标题：
+					</div>
+					<div class="content-area">
+						<input type="text"  id="shareTitle" value=''  placeholder="请填写标题">
+					</div>
+				</div>
+				<div class="edit-item">
+					<div class="labal-area">
+						分享描述：
+					</div>
+					<div class="content-area">
+						<input type="text"  id="shareDesc"  value='' placeholder="请填写描述">
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../lib/jquery.minicolors.js"></script>
+		<script src="../lib/drag.js"></script>
+		<script src="../common/commonUI.js" charset="utf-8"></script>
+		<script src="../module/main/shareEdit.js"></script>
+	</body>
+</html>

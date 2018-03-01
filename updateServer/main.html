@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面工具更新服务端</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div id="titleBar">页面工具更新服务端
+    <a id="close" href="#"></a>
+    <a id="minimize" href="#"></a>
+</div>
+<div id="pageWrapper">
+    <div class="inputPlatform">
+        <label>发布地址</label><input id="ipAddress" type="text" value=""/>
+    </div>
+    <div class="inputPlatform">
+        <label>发布端口</label><input id="port" type="text" value="80"/>
+    </div>
+    <div class="inputPlatform">
+        <label>版本号</label><input id="version" type="text" value="1.0.0" disabled/>
+    </div>
+    <div class="inputPlatform">
+        <label>文件服务器地址</label><input id="fileAddress" type="text" value=""/>
+    </div>
+    <div class="inputPlatform">
+        <label>文件服务器端口</label><input id="filePort" type="text" value="8081"/>
+    </div>
+    <div class="inputPlatform">
+        <button id="fileEntry">指定文件夹</button>
+    </div>
+    <div class="inputPlatform">
+        <button id="submit">发布</button>
+    </div>
+    <div class="inputPlatform">
+        <button id="stop" disabled>停止服务</button>
+    </div>
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/tcp.js"></script>
+<script src="js/tcpServer.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+</html>

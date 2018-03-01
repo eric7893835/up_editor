@@ -1,0 +1,125 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: #eeeeee;
+    font-family: "Microsoft YaHei UI";
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+input {
+    -webkit-appearance: none;
+    outline: none;
+    display: block;
+}
+
+#pageWrapper {
+    width: 760px;
+    height: 100%;
+    padding:20px;
+}
+
+#titleBar {
+    -webkit-app-region: drag;
+    height: 26px;
+    line-height: 26px;
+    font-size: 16px;
+    text-align: center;
+    background: #c7c7c7;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+#titleBar a {
+    -webkit-app-region: no-drag;
+    display: inline-block;
+    float: right;
+    height: 12px;
+    width: 12px;
+    margin: 6px;
+    border: gray 1px solid;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+#titleBar a:hover {
+    background: gray;
+}
+
+.chart {
+    margin-bottom: 20px;
+    font-size: 0;
+}
+
+#close {
+    background: #c71821;
+}
+
+#minimize {
+    background: #e69b24;
+}
+
+#maximize {
+    background: #6fbf43;
+}
+
+#restore {
+    background: #6fbf43;
+}
+
+.inputPlatform {
+    width: 760px;
+    height: 50px;
+    vertical-align:middle;
+}
+
+.inputPlatform label {
+    font-size: 24px;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 50px;
+    word-break: keep-all;
+    display: block;
+    float: left;
+    width: 200px;
+}
+.inputPlatform input{
+    float: left;
+    margin-top: 12px;
+    font-size: 24px;
+    /*border: none;*/
+    width: 200px;
+    height: 24px;
+    padding: 0;
+    margin-left: 5px;
+}
+.inputPlatform #submit{
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 24px;
+    margin-top: 4px;
+}
+.inputPlatform #stop{
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 24px;
+    margin-top: 4px;
+}
+.inputPlatform #fileEntry{
+    width: 160px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 24px;
+    margin-top: 4px;
+}

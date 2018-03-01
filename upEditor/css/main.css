@@ -1,0 +1,727 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: #eeeeee;
+    font-family: "Microsoft YaHei UI";
+    position: absolute;
+}
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    -webkit-appearance: none;
+    outline: none;
+    display: block;
+}
+
+#pageWrapper {
+    width: 100%;
+    height: 100%;
+}
+
+#titleBar {
+    -webkit-app-region: drag;
+    height: 26px;
+    line-height: 26px;
+    font-size: 16px;
+    text-align: center;
+    background: #c7c7c7;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+#titleBar a {
+    -webkit-app-region: no-drag;
+    display: inline-block;
+    float: right;
+    height: 12px;
+    width: 12px;
+    margin: 6px;
+    border: gray 1px solid;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+#titleBar a:hover {
+    background: gray;
+}
+
+.chart {
+    margin-bottom: 20px;
+    font-size: 0;
+}
+
+#close {
+    background: #c71821;
+}
+
+#minimize {
+    background: #e69b24;
+}
+
+#maximize {
+    background: #6fbf43;
+}
+
+#restore {
+    background: #6fbf43;
+}
+
+#leftBody {
+    background: #ffffff;
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 26px;
+    left: 0;
+    border-right: 1px solid #c7c7c7;
+    overflow: hidden;
+    z-index: 10001;
+}
+#leftBody #left {
+    width: 320px;
+    height: 96%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#leftBody #left .left-item {
+    float: left;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+
+#leftBody #left .left-item img {
+    width: 80px;
+    height: 80px;
+}
+
+#leftBody #left .left-item span {
+    display: block;
+}
+
+#layoutBody {
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+}
+
+#layoutBody #deviceBox {
+    background: #ffffff;
+    border: 1px solid #c7c7c7;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 375px;
+    height: 667px;
+    margin-left: -189px;
+    margin-top: -322px;
+    /*overflow: hidden;*/
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0.5px;
+    height: 0.5px;
+    background-color:rgba(0,0,0,0.1);
+    /*opacity: 0.1;*/
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color:transparent;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+#layoutBody #deviceBox #device {
+    width: 100%;
+    height: 667px;
+    padding-left: 1px;
+    /*overflow-y: auto;*/
+    /*overflow-x: hidden;*/
+    position:absolute;
+}
+
+#layoutBody #deviceBox #device .up-editor-image {
+    display: block;
+    width:100%;
+}
+
+#rightBody {
+    background: #ffffff;
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 26px;
+    right: 0;
+    border-left: 1px solid #c7c7c7;
+    z-index: 10000;
+}
+
+#projectInfoBody {
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom: 1px solid #c7c7c7;
+    height: 250px;
+}
+
+#projectInfoBody .projectItem, #projectInfoBody .projectButtonItem {
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+}
+
+#projectInfoBody .projectItem {
+    box-sizing: border-box;
+    margin-left: 20px;
+    border-bottom: 1px solid #c7c7c7;
+    position: relative;
+}
+
+#projectInfoBody .projectButtonItem {
+    text-align: center;
+}
+
+#projectInfoBody .projectItem .label {
+    vertical-align: middle;
+    width: 100px;
+    height: 50px;
+    float: left;
+}
+
+#projectInfoBody .projectItem #projectName {
+    font-size: 18px;
+    width: 170px;
+    height: 50px;
+    vertical-align: middle;
+    padding: 0;
+    background: none;
+    border: none;
+}
+#projectInfoBody .projectItem #topRightShare {
+    font-size: 18px;
+    width: 20px;
+    height: 20px;
+    line-height: 50px;
+    -webkit-appearance: checkbox;
+    outline: none;
+    position: absolute;
+    top:50%;
+    left: 96px;
+    margin-top: -10px;
+}
+
+#projectInfoBody .projectButtonItem button {
+    color: #ffffff;
+    height: 30px;
+    width: 80px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+#projectInfoBody .projectButtonItem #openProject {
+    background-color: #d9534f;
+    /*暂时隐藏打开按钮*/
+    visibility: hidden;
+}
+
+#projectInfoBody .projectButtonItem #saveProject {
+    background-color: #5cb85c;
+    /*暂时隐藏保存按钮*/
+    visibility: hidden;
+}
+
+#projectInfoBody .projectButtonItem #importProject {
+    background-color: #337ab7;
+}
+
+#optionBody {
+    overflow: scroll;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    width: 320px;
+    height: 434px;
+    padding: 0 7px;
+}
+
+#optionBody li {
+    line-height: 40px;
+    font-size: 16px;
+    height: 40px;
+    width: 284px;
+    border-bottom: 1px solid #c7c7c7;
+    padding: 5px 0;
+    position: relative;
+}
+
+#optionBody li label {
+    display: inline-block;
+    height: 50px;
+    width: 70px;
+}
+
+#optionBody li input {
+    box-sizing: border-box;
+    display: inline;
+    width: 200px;
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid #c7c7c7;
+    margin: 0 0 0 5px;
+}
+
+#optionBody li input[type=number] {
+    width: 85px;
+}
+
+/*button*/
+#optionBody li input[class=buttonPadding] , #optionBody li input[class=boxShadowOffset]{
+    width: 98px;
+}
+
+#optionBody li select[data-name=linearGradientStyle] , #optionBody li a[data-name=src] {
+    width: 200px;
+    margin-left: 5px;
+}
+.minicolors {
+    margin-left: 0 !important;
+}
+
+/*END*/
+#optionBody li input[type=range] {
+    width: 157px;
+    -webkit-appearance: slider-horizontal;
+    float: right;
+    margin: 5px 10px 0 0;
+    padding: 0;
+}
+
+#optionBody li .rangeTxt {
+    width: 30px;
+    margin: 5px 10px 0 0;
+    float: right;
+    padding: 0;
+    text-align: center;
+}
+
+#optionBody li select {
+    display: inline;
+    height: 30px;
+}
+
+#optionBody li select[data-name=position] {
+    width: 200px;
+}
+
+#optionBody li select[data-name=width], #optionBody li select[data-name=height] {
+    width: 106.5px;
+}
+
+#buttonArea {
+    width: 186px;
+    height: 30px;
+    padding: 10px 7px;
+}
+
+#buttonArea button {
+    float: left;
+    text-align: center;
+    height: 30px;
+    border: 1px;
+    border-radius: 40px;
+    /*background-color: #7f7f7f;*/
+    font-size: 14px;
+    width: 60px;
+}
+
+#buttonArea #openProject {
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(222, 28, 3, 1)), to(rgba(222, 28, 3, 0.3)));
+}
+
+#buttonArea #saveProject {
+    margin-left: 3px;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(30, 122, 255, 1)), to(rgba(30, 122, 255, 0.3)));
+}
+
+#buttonArea #importProject {
+    margin-left: 3px;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(45, 153, 41, 1)), to(rgba(45, 153, 41, 0.3)));
+}
+
+.secertMenu {
+    position: fixed;
+    background: #eeeeee;
+    border: 1px solid #c7c7c7;
+    width: 400px;
+    height: 300px;
+    z-index: 10001;
+}
+.secertMenu .titlestr{
+    font-size: 18px;
+    float: left;
+    padding-left: 10px;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 24px;
+}
+.secertMenu .title {
+    height: 24px;
+    width: 100%;
+    background: #c7c7c7;
+}
+
+.secertMenu .title .close {
+    -webkit-app-region: no-drag;
+    display: inline-block;
+    float: right;
+    height: 12px;
+    width: 12px;
+    margin: 6px;
+    border: gray 1px solid;
+    box-sizing: border-box;
+    border-radius: 6px;
+    background: #c71821;
+}
+
+.secertMenu .title .close:hover {
+    background: gray;
+}
+.secertMenu .content{
+    width: 400px;
+    height: 256px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.secertMenu .content .row{
+    width: 380px;
+    height: 30px;
+    padding-left:10px;
+    padding-right: 10px;
+}
+.secertMenu .content .row .label{
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bolder;
+    font-size: 15px;
+}
+.secertMenu .content .row #updateAddress{
+    float: left;
+    width: 100px;
+    margin-left: 10px;
+    outline: none;
+    margin-top: 4px;
+}
+.secertMenu .content .row #updateAddress:disabled{
+    border: none;
+    width: 102px;
+    height: 20px;
+    background: #eeeeee;
+}
+.secertMenu .content .row #updatePort{
+    float: left;
+    margin-left: 10px;
+    margin-top: 4px;
+    width: 40px;
+}
+.secertMenu .content .row #updatePort:disabled{
+    border: none;
+    width: 42px;
+    height: 20px;
+    background: #eeeeee;
+}
+.secertMenu .content .row #updateSetting{
+    float: left;
+    width: 47px;
+    margin-top: 2px;
+    margin-left: 10px;
+}
+.secertMenu .content .row #updateSave{
+    display: none;
+    float: left;
+    width: 47px;
+    margin-top: 2px;
+    margin-left: 10px;
+}
+.secertMenu .content .row #update{
+    float: left;
+    width: 70px;
+    margin-top: 2px;
+    margin-left: 10px;
+}
+.secertMenu .content .row .text{
+    float: left;
+    height: 30px;
+    margin-left: 10px;
+    font-size: 15px;
+    line-height: 30px;
+    width: 100px;
+}
+.secertMenu .content .row #autoUpdate{
+    float: left;
+    width: 70px;
+    margin-top: 2px;
+    margin-left: 10px;
+}
+
+
+/*
+占位dom
+*/
+.blankdom{
+    line-height: 40px;
+    text-align: left;
+    padding-left:5px;
+    color:#333;
+    font-size: 16px;
+    font-weight:normal;
+}
+
+/*
+清除背景
+*/
+#delBg{
+    margin-left: 70px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/*
+LinkButton
+*/
+.up-editor-button{
+    background-color: rgb(122, 216, 11);
+    border-radius: 5px;
+    border:0 solid #969696;
+    font-size: 16px;
+    line-height: 42px;
+    color: rgb(255, 255, 255);
+    display: block;
+    padding: 0;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    height:100%;
+    min-height: 20px;
+}
+.buttonUpload, .clearBgImage{
+    text-decoration: none;
+    height: 28px;
+    display: inline-block;
+    margin-left: 5px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 3px;
+}
+.buttonUpload{
+    color: #969696;
+    border: 1px solid #969696;
+    width: 145px;
+}
+.buttonUpload:hover{
+    color: #323232;
+    border: 1px solid #323232;
+}
+.buttonUpload:active{
+    color: deepskyblue;
+}
+.clearBgImage{
+    color: #dedede;
+    border: 1px solid #dedede;
+    width: 45px;
+}
+.clearBgImage:hover{
+    color: #323232;
+    border: 1px solid #323232;
+}
+/*
+当前border的颜色
+*/
+.widgetSelectMask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed #357CA5;
+    display: block;
+    /*z-index:1000000;*/
+    box-sizing: border-box;
+     /*pointer-events: none;*/
+}
+.widgetMaskClose {
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background:url("../img/closeSelect.png") no-repeat center center;
+    background-size:12px 12px;
+    cursor: pointer;
+}
+
+
+/*
+占位符input
+*/
+.blankfontBold{
+    margin-left: 5px;
+    width:85px;
+}
+
+
+
+/*
+默认隐藏init属性
+*/
+
+.initDn{
+    display: none;
+}
+/*
+改变body背景色
+*/
+.changeBg{
+    /*width:160px;*/
+    padding:0px 5px;
+    height:30px;
+    line-height:30px;
+    color:#fff;
+    background-color:#5cb85c;
+    border-radiusborder-radius:2px;
+    cursor: pointer;
+    position: fixed;
+    bottom:10px;
+    left:209px;
+}
+
+#optionBody li select[data-name=bgSet]{
+    width: 96.5px;
+}
+
+#optionBody li .isShare,#optionBody li .isDownloadPage{
+    -webkit-appearance: checkbox;
+    outline: none;
+    position: relative;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+}
+/*
+富文本编辑按钮
+*/
+.edit-show *{
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+}
+.edit-show{
+    position: relative;
+    font-size: 12px;
+    font-family: "微软雅黑";
+}
+.edit-show p font{
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.2em;
+}
+.clearFormat{
+    width: 200px;
+    background-color: #d9534f;
+    border-radius: 4px;
+    box-shadow: none;
+    border:none;
+    cursor: pointer;
+    color: white;
+    height: 2em;
+    line-height: 2em;
+}
+.clearFormat:hover{
+    background-color: #c8423d;
+}
+
+.editRichtext{
+    width: 200px;
+    background-color: #5cb85c;
+    border-radius: 4px;
+    box-shadow: none;
+    border:none;
+    cursor: pointer;
+    color: white;
+    height: 2em;
+    line-height: 2em;
+}
+.editRichtext:hover{
+    background-color: #4ba76b;
+}
+.edit-popup{
+    z-index: 9999999999999;
+    margin: 0 auto;
+    width: 800px;
+    border: 1px solid #d4d4d4;
+    padding: 25px 10px 10px 10px;
+    background-color: white;
+    position: fixed;
+    /* bottom: -380px;*/
+    left: 50%;
+    margin-left: -400px;
+    -moz-box-shadow: 5px 10px 10px rgba(0,0,0,0.5);
+    -o-box-shadow: 5px 10px 10px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 5px 10px 10px rgba(0,0,0,0.5);
+    box-shadow: 5px 10px 10px rgba(0,0,0,0.5);
+}
+.confirm-popup{
+    position: absolute;
+    right: 38px;
+    top: 3px;
+    z-index: 100001;
+    font-size: 12px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    height: 20px;
+    width: 20px;
+    color: white;
+    background-color: #5cb85c;
+    cursor:pointer;
+}
+.confirm-popup:hover{
+    background-color: #4ba76b;
+}
+
+.close-popup{
+    position: absolute;
+    right: 12px;
+    top: 3px;
+    z-index: 100001;
+    font-size: 12px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    height: 20px;
+    width: 20px;
+    color: white;
+    background-color: #d9534f;
+    cursor:pointer;
+}
+.close-popup:hover{
+    background-color: #c8423d;
+}

@@ -1,0 +1,19 @@
+{
+  "app": {
+    "background": {
+      "scripts": ["./module/main/background.js","./module/main/UserSetting.js"]
+    }
+  },
+  "manifest_version": 2,
+  "name": "upEditor",
+  "version": "1.0.0",
+  "description": "银联页面构建工具",
+  "icons": {
+    "16": "resource/favicon.png",
+    "48": "resource/favicon.png",
+    "128": "resource/favicon.png"
+  },
+  "permissions": [
+    {"fileSystem":["write","directory"]},"storage","unlimitedStorage"
+  ]
+}

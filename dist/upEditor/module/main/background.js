@@ -1,0 +1,1 @@
+chrome.runtime.onInstalled.addListener(function(){chrome.storage.local.set(userInfo,function(){})}),chrome.app.runtime.onLaunched.addListener(function(){var e=chrome.app.window.get("main");e?e.show():chrome.app.window.create("../../html/main.html",{bounds:{width:1e3,height:710},resizable:!1,frame:"none"})});

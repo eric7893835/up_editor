@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>upEditor</title>
+    <link rel="stylesheet" href="../lib/jquery.minicolors.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../common/commonUI.css">
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META HTTP-EQUIV="Expires" CONTENT="0">
+</head>
+<body>
+<div id="titleBar">银联页面构建工具
+    <a id="close" href="#"></a>
+    <a id="restore" href="#" style="display: none"></a>
+    <a id="maximize" href="#"></a>
+    <a id="minimize" href="#"></a>
+</div>
+<div id="pageWrapper">
+    <div id="leftBody">
+        <div id="left">
+        </div>
+        <div class="changeBg" id="changeInput">Background</div>
+    </div>
+    <div id="layoutBody">
+        <div id="deviceBox"  data-rp="no-repeat">
+            <div id="device">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="rightBody">
+        <div id="projectInfoBody">
+            <div class="projectItem">
+                <div class="label">工程名称：</div>
+                <input type="text" id="projectName" placeholder="输入项目名称">
+            </div>
+            <div class="projectItem">
+                <div class="label">最终修改：</div>
+                <div id="lastDate">now</div>
+            </div>
+            <div class="projectItem">
+                <div class="label">模块个数：</div>
+                <div id="projectAmount"></div>
+            </div>
+            <div class="projectItem">
+                <div class="label">右上分享：</div>
+                <input type="checkbox" name="topRightShare" id="topRightShare">
+            </div>
+            <div class="projectButtonItem">
+                <button id="openProject">打开</button>
+                <button id="saveProject">保存</button>
+                <button id="importProject">导出</button>
+            </div>
+        </div>
+        <ul id="optionBody">
+            <!--<li class="publicAttr initDn">-->
+                <!--<label>定位类型</label>-->
+                    <!--<select data-name='position'>-->
+                        <!--<option value='relative'>默认定位</option>-->
+                        <!--<option value='absolute'>手动定位</option>-->
+                    <!--</select>-->
+            <!--</li>-->
+            <li  class="publicAttr initDn">
+                <label>定位</label>
+                x<input data-name='top' id="changeX" type="number"  value="0" />
+                y<input data-name='left' id="changeY" type="number"  value="0" />
+            </li>
+            <li  class="publicAttr initDn" id="specialW">
+                <label>宽</label>
+                <select data-name="width" id="selWidth">
+                    <option value="自动">自动</option>
+                    <option value="手动">手动</option>
+                </select>
+                <input type="number" value="375" max="375" id="changeWidth" />
+            </li>
+            <li  class="publicAttr initDn" id="specialH">
+                <label>高</label>
+                <select data-name="width" id="selHeight">
+                    <option value="自动">自动</option>
+                    <option value="手动">手动</option>
+                </select>
+                <input type="number" value="0" id="changeHeight"/>
+            </li>
+            <li  class="publicAttr initDn">
+                <label>旋转</label>
+                <input data-name="rotate" class="rangeTxt" id="showDeg" value="0"/>
+                <input type="range" value="0" min="-180" max="180" id="changeDeg"/>
+            </li>
+            <li  class="publicAttr initDn">
+                <label>透明度</label>
+                <input data-name="opacity" class="rangeTxt" id="showVal" value="100"/>
+                <input type="range" value="100" id="changeOpacity" min="0" max="100"/>
+            </li>
+            <li  class="publicAttr initDn">
+                <label>层叠</label>
+                <input data-name='z-index' id="changeZindex" type="number" value="0"/>
+
+            </li>
+        </ul>
+
+    </div>
+</div>
+<!--<script src="../lib/index.js"></script>-->
+<script src="../lib/jquery.min.js"></script>
+<script src="../lib/jquery.minicolors.js"></script>
+<script src="../lib/drag.js"></script>
+<script src="../lib/qrcode.js"></script>
+<script src="../lib/require.js" charset="utf-8"></script>
+<script src="../module/main/control.js"></script>
+<script src="../common/commonUI.js" charset="utf-8"></script>
+<script src="../module/main/main.js" charset="UTF-8"></script>
+<script src="../module/main/optCfg.js"></script>
+
+</body>
+</html>
